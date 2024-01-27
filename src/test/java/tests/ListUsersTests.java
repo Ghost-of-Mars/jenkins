@@ -65,9 +65,9 @@ public class ListUsersTests extends BaseTest {
         });
     }
 
-    @Disabled("Так надо")
+    @Disabled("Дубль первого")
     @Test
-    void listUsers3() {
+    void itsDouble() {
 
         ResponseListModel responseListModel = step("Отправка запроса и его маппинг на модель", () ->
                 given()
@@ -88,9 +88,6 @@ public class ListUsersTests extends BaseTest {
             assertThat(responseListModel.getData()[0].getFirst_name()).isEqualTo("George");
             assertThat(responseListModel.getData()[0].getLast_name()).isEqualTo("Bluth");
             assertThat(responseListModel.getData()[0].getAvatar()).isEqualTo("https://reqres.in/img/faces/1-image.jpg");
-
         });
     }
-
-
 }
